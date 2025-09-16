@@ -1,28 +1,8 @@
 ﻿#include <iostream>
-#include <locale>
 #include <windows.h>
+#include "Correctinput.h"
 
 using namespace std;
-
-template <typename T>
-T readNumber(T min, T max) {
-    T x;
-    while (true) {
-        if (!(std::wcin >> x)) {
-            std::wcin.clear();
-            std::wcin.ignore(10000, '\n');
-            std::wcout << L"Ошибка! Введите число от " << min << L" до " << max << L"." << endl;
-            continue;
-        }
-        std::wcin.ignore(10000, '\n');
-        if (x < min || x > max) {
-            std::wcout << L"Число вне диапазона! Попробуйте снова." << endl;
-            continue;
-        }
-        return x;
-    }
-}
-
 
 int main()
 {
@@ -63,7 +43,6 @@ int main()
             wcout << L"Неверная команда!" << endl;
             break;
         }
-        //Проверка
 	}
 }
 
