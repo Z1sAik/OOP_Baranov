@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <iostream>
 #include <string>
 
@@ -9,12 +9,12 @@ T readNumber(T min, T max) {
         if (!(std::wcin >> x)) {
             std::wcin.clear();
             std::wcin.ignore(10000, L'\n');
-            std::wcout << L"Îøèáêà! Ââåäèòå ÷èñëî îò " << min << L" äî " << max << L"." << std::endl;
+            std::wcout << L"ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¾Ñ‚ " << min << L" Ð´Ð¾ " << max << L"." << std::endl;
             continue;
         }
         std::wcin.ignore(10000, L'\n');
         if (x < min || x > max) {
-            std::wcout << L"×èñëî âíå äèàïàçîíà! Ïîïðîáóéòå ñíîâà." << std::endl;
+            std::wcout << L"Ð§Ð¸ÑÐ»Ð¾ Ð²Ð½Ðµ Ð´Ð¸Ð°Ð¿Ð°Ð·Ð¾Ð½Ð°! ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ ÑÐ½Ð¾Ð²Ð°." << std::endl;
             continue;
         }
         return x;
@@ -25,4 +25,4 @@ inline std::wstring get_line(std::wistream& in) {
     std::wstring input;
     std::getline(in >> std::ws, input);
     return input;
-}
+} 

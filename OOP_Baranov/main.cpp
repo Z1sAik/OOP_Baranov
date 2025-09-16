@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include <windows.h>
+#include <windows.h> 
 #include "Correctinput.h"
 
 using namespace std;

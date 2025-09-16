@@ -1,6 +1,6 @@
-#pragma once
+﻿#pragma once
 #include <string>
-
+ 
 class Soldier {
 private:
 	int ID;
