@@ -20,9 +20,3 @@ T readNumber(T min, T max) {
         return x;
     }
 }
-
-inline std::wstring get_line(std::wistream& in) {
-    std::wstring input;
-    std::getline(in >> std::ws, input);
-    return input;
-} 

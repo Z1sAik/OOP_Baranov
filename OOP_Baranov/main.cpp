@@ -1,8 +1,11 @@
 ﻿#include <iostream>
 #include <windows.h> 
 #include "Correctinput.h"
+#include <vector>
+#include "Soldier.h"
 
 using namespace std;
+
 
 int main()
 {
@@ -10,6 +13,8 @@ int main()
 	wcin.imbue(locale(""));
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+
+    Soldier s;
 
 	while (true) {
         wcout << L"--- Меню ---" << endl;
@@ -27,11 +32,13 @@ int main()
         case 0:
             cout << "Выход из программы." << endl;
             return 0;
-        case 1:
-            wcout << L"Неверная команда!" << endl;
+        case 1: {
+            wcin >> s;
+            wcout << L"Солдат добавлен!\n";
             break;
+        }
         case 2:
-            wcout << L"Неверная команда!" << endl;
+            wcout << s;
             break;
         case 3:
             wcout << L"Неверная команда!" << endl;

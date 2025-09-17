@@ -1,28 +1,38 @@
 ﻿#pragma once
 #include <string>
- 
+#include <iostream>
+#include <fstream>
+
 class Soldier {
 private:
+	static int NextID;
 	int ID;
 	std::wstring Name;
+	std::wstring Surname;
 	int Age;
-	std::wstring Rank;
-public:
-	Soldier() {
-		ID = 0;
-		Name = L"";
-		Age = 0;
-		Rank = L"";
-	}
-	Soldier(int s_ID, std::wstring s_Name, int s_Age, std::wstring s_Rank) {
-		ID = s_ID;
-		Name = s_Name;
-		Age = s_Age;
-		Rank = s_Rank;
-	}
+	int RankID;
 
-	void readFromConsole();
-	void writeToConsole() const;
-	bool readFromFile(std::wifstream& in);
-	void writeToFile(std::wofstream& out) const;
+public:
+
+    Soldier() {
+        ID = ++NextID;
+        Name = L"";
+        Surname = L"";
+        Age = 0;
+        RankID = 0;
+    }
+
+    Soldier(std::wstring s_Name, std::wstring s_Surname, int s_Age, int s_RankID) {
+        ID = ++NextID;
+        Name = s_Name;
+        Surname = s_Surname;
+        Age = s_Age;
+        RankID = s_RankID;
+    }
+
+    friend std::wostream& operator<<(std::wostream& out, const Soldier& s);
+    friend std::wistream& operator>>(std::wistream& in, Soldier& s);
+    friend std::wofstream& operator<<(std::wofstream& fout, const Soldier& s);
+    friend std::wifstream& operator>>(std::wifstream& fin, Soldier& s);
+    static std::wstring rankToString(int id);
 };
