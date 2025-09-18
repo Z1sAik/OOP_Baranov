@@ -1,55 +1,53 @@
 ﻿#include <iostream>
-#include <windows.h> 
-#include "Correctinput.h"
-#include <vector>
+#include <windows.h>
+#include "function.h"
 #include "Soldier.h"
+#include "Squad.h"
 
 using namespace std;
 
-
 int main()
 {
-	wcout.imbue(locale(""));
-	wcin.imbue(locale(""));
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+    wcout.imbue(locale(""));
+    wcin.imbue(locale(""));
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
 
-    Soldier s;
+    Squad squad;
 
-	while (true) {
-        wcout << L"--- Меню ---" << endl;
+    while (true) {
+        wcout << L"\n--- Меню ---" << endl;
         wcout << L"1. Добавить солдата" << endl;
-        wcout << L"2. Показать взвод(вывести всех солдат)" << endl;
+        wcout << L"2. Показать взвод (всех солдат)" << endl;
         wcout << L"3. Считать из файла" << endl;
         wcout << L"4. Записать в файл" << endl;
         wcout << L"5. Очистить список" << endl;
         wcout << L"0. Выход" << endl;
-        wcout << L"Выберите пункт: " << endl;
+        wcout << L"Выберите пункт: ";
 
-        int x = readNumber<int>(0, 5);
+        int choice = readNumber<int>(0, 5);
 
-        switch (x) {
+        switch (choice) {
         case 0:
-            cout << "Выход из программы." << endl;
+            wcout << L"Выход из программы." << endl;
             return 0;
-        case 1: {
-            wcin >> s;
-            wcout << L"Солдат добавлен!\n";
+        case 1:
+            squad.addSoldier();
+            wcout << L"Солдат добавлен!" << endl;
             break;
-        }
         case 2:
-            wcout << s;
+            squad.showAll();
             break;
         case 3:
-            wcout << L"Неверная команда!" << endl;
+            loadSquad(squad);
             break;
         case 4:
-            wcout << L"Неверная команда!" << endl;
+            saveSquad(squad);
             break;
         case 5:
-            wcout << L"Неверная команда!" << endl;
+            squad.clear();
+            wcout << L"Список очищен!" << endl;
             break;
         }
-	}
+    }
 }
-

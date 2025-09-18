@@ -123,12 +123,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="function.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Soldier.cpp" />
+    <ClCompile Include="Squad.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Correctinput.h" />
+    <ClInclude Include="function.h" />
     <ClInclude Include="Soldier.h" />
+    <ClInclude Include="Squad.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />

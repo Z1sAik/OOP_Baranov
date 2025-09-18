@@ -15,19 +15,11 @@ private:
 public:
 
     Soldier() {
-        ID = ++NextID;
+        ID = 0;
         Name = L"";
         Surname = L"";
         Age = 0;
         RankID = 0;
-    }
-
-    Soldier(std::wstring s_Name, std::wstring s_Surname, int s_Age, int s_RankID) {
-        ID = ++NextID;
-        Name = s_Name;
-        Surname = s_Surname;
-        Age = s_Age;
-        RankID = s_RankID;
     }
 
     friend std::wostream& operator<<(std::wostream& out, const Soldier& s);

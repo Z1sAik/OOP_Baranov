@@ -1,7 +1,7 @@
 ﻿#include "Soldier.h"
 #include <iostream>
 #include <string>
-#include "Correctinput.h"
+#include "function.h"
 #include <fstream>
 
 using namespace std;
