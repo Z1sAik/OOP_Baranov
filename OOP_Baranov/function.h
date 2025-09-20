@@ -25,6 +25,3 @@ T readNumber(T min, T max) {
 class Squad;
 void saveSquad(const Squad& squad);
 void loadSquad(Squad& squad);
-
-
-
